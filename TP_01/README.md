@@ -1,0 +1,1 @@
+Se realizaron comentarios al primos.py

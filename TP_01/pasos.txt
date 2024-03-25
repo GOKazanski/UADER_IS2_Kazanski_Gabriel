@@ -1,0 +1,9 @@
+cd UADER_IS2_Kazanski_Gabriel\TP_01\src>
+python primos.py
+git add .
+git commit -m "subida de primos.py"
+git push origin main 
+git pull origin main 
+se agrgaron comentarios a primos.py
+cd..
+touch README.md

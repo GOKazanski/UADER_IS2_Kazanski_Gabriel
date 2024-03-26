@@ -56,3 +56,8 @@ class Factorial:
 
         for num in range(num_min, num_max + 1):
             print(f"Factorial {num}! es {self.factorial(int(num))}")
+
+fac = Factorial()
+
+#fac.run()
+fac.run(1 , 5)

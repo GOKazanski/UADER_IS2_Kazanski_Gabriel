@@ -14,6 +14,7 @@ modo_conversacion = "--convers" in sys.argv
 """Buffer para almacenar la conversación"""
 conversacion = []
 
+"""Permite ingresar una pregunta al usuario, la cual se guardara junto a la respuesta del Chat"""
 def consulta_uruario():
     while True:
         try:
@@ -38,11 +39,11 @@ def consulta_uruario():
             print(e)
 
 
+"""Prepara los mensajes, incluyendo la conversación existente y la nueva consulta"""
 def consulta_chat_gpt(consulta, conversacion=None):
     if conversacion is None:
         conversacion = []
 
-    """Prepara los mensajes, incluyendo la conversación existente y la nueva consulta"""
     mensajes = conversacion + [
         {
             "role": "user",

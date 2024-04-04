@@ -123,9 +123,11 @@ Corregido las sugerencias de pylint
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/0703c2ac-469f-4e8e-809d-4dc8856e2d08)
 
 
+
+
 ```
-gokaz@LAPTOP-8LKR8N4F MINGW64 ~/OneDrive/Documentos/UADER/3Anio/IS2/Códigos/UADER_IS2_Kazanski_Gabriel/TP_02 (main)    
-$ multimetric estudio_chat_gpt.py 
+gokaz@LAPTOP-8LKR8N4F MINGW64 ~/OneDrive/Documentos/UADER/3Anio/IS2/Códigos/UADER_IS2_Kazanski_Gabriel/TP_02 (main)
+$ multimetric estudio_chat_gpt.py
 {
   "files": {
     "C:\\Users\\gokaz\\OneDrive\\Documentos\\UADER\\3Anio\\IS2\\C\u00f3digos\\UADER_IS2_Kazanski_Gabriel\\TP_02\\estudio_chat_gpt.py": {

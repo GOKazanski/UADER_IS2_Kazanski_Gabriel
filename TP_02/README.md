@@ -9,6 +9,7 @@
 * [Entrega](#entrega)
 * [Presentación del Trabajo Práctico](#presentación-del-trabajo-práctico)
     - Capturas de pantalla
+    - Multimetric
 
 ## Arquitectura base
 El motor conversacional chat GPT producido por OpenAI puede utilizarse mediante diferentes formas de acceder a su arquitectura multicapa.
@@ -106,7 +107,9 @@ documentación de uso del API.
 
 ## Entrega
 ```
-Como resultado de la ejecución de la consigna deberá colocarse el programa final en una carpeta llamada “chatGPT” en la rama “src” del repositorio GitHub personal creado en prácticos anteriores. Como entrega se entregará un enlace al código fuente escrito.
+Como resultado de la ejecución de la consigna deberá colocarse el programa final en una carpeta
+llamada “chatGPT” en la rama “src” del repositorio GitHub personal creado en prácticos anteriores.
+Como entrega se entregará un enlace al código fuente escrito.
 Deberá agregarse una memoria con los resultados obtenidos en la ejecución del programa multimetric
 ```
 [Volver al índice](#índice)
@@ -115,5 +118,185 @@ Deberá agregarse una memoria con los resultados obtenidos en la ejecución del 
 ### Capturas de pantalla
 Ejecución de pylint sobre el archivo sin modificaciones
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/739863d5-5ba3-4d06-b7ed-70871f5a55dc)
+
+Corregido las sugerencias de pylint
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/0703c2ac-469f-4e8e-809d-4dc8856e2d08)
+
+
+```
+gokaz@LAPTOP-8LKR8N4F MINGW64 ~/OneDrive/Documentos/UADER/3Anio/IS2/Códigos/UADER_IS2_Kazanski_Gabriel/TP_02 (main)    
+$ multimetric estudio_chat_gpt.py 
+{
+  "files": {
+    "C:\\Users\\gokaz\\OneDrive\\Documentos\\UADER\\3Anio\\IS2\\C\u00f3digos\\UADER_IS2_Kazanski_Gabriel\\TP_02\\estudio_chat_gpt.py": {
+      "comment_ratio": 17.537,
+      "cyclomatic_complexity": 3,
+      "fanout_external": 6,
+      "fanout_internal": 0,
+      "halstead_bugprop": 1.271,
+      "halstead_difficulty": 39.266,
+      "halstead_effort": 149724.477,
+      "halstead_timerequired": 8318.026,
+      "halstead_volume": 3813.052,
+      "lang": [
+        "Python"
+      ],
+      "loc": 100,
+      "maintainability_index": 52.826,
+      "operands_sum": 289,
+      "operands_uniq": 92,
+      "operators_sum": 266,
+      "operators_uniq": 25,
+      "pylint": 100.0,
+      "tiobe": 97.0,
+      "tiobe_compiler": 100.0,
+      "tiobe_complexity": 80.0,
+      "tiobe_coverage": 100.0,
+      "tiobe_duplication": 100.0,
+      "tiobe_fanout": 100.0,
+      "tiobe_functional": 100.0,
+      "tiobe_security": 100.0,
+      "tiobe_standard": 100.0
+    }
+  },
+  "overall": {
+    "comment_ratio": 17.537,
+    "cyclomatic_complexity": 3,
+    "fanout_external": 6,
+    "fanout_internal": 0,
+    "halstead_bugprop": 1.271,
+    "halstead_difficulty": 39.266,
+    "halstead_effort": 149724.477,
+    "halstead_timerequired": 8318.026,
+    "halstead_volume": 3813.052,
+    "loc": 100,
+    "maintainability_index": 52.826,
+    "operands_sum": 289,
+    "operands_uniq": 92,
+    "operators_sum": 266,
+    "operators_uniq": 25,
+    "pylint": 100.0,
+    "tiobe": 97.0,
+    "tiobe_compiler": 100.0,
+    "tiobe_complexity": 80.0,
+    "tiobe_coverage": 100.0,
+    "tiobe_duplication": 100.0,
+    "tiobe_fanout": 100.0,
+    "tiobe_functional": 100.0,
+    "tiobe_security": 100.0,
+    "tiobe_standard": 100.0
+  },
+  "stats": {
+    "max": {
+      "comment_ratio": 17.537,
+      "cyclomatic_complexity": 3,
+      "fanout_external": 6,
+      "fanout_internal": 0,
+      "halstead_bugprop": 1.271,
+      "halstead_difficulty": 39.266,
+      "halstead_effort": 149724.477,
+      "halstead_timerequired": 8318.026,
+      "halstead_volume": 3813.052,
+      "loc": 100,
+      "maintainability_index": 52.826,
+      "operands_sum": 289,
+      "operands_uniq": 92,
+      "operators_sum": 266,
+      "operators_uniq": 25,
+      "pylint": 100.0,
+      "tiobe": 97.0,
+      "tiobe_compiler": 100.0,
+      "tiobe_complexity": 80.0,
+      "tiobe_coverage": 100.0,
+      "tiobe_duplication": 100.0,
+      "tiobe_fanout": 100.0,
+      "tiobe_functional": 100.0,
+      "tiobe_security": 100.0,
+      "tiobe_standard": 100.0
+    },
+    "mean": {
+      "comment_ratio": 17.537,
+      "cyclomatic_complexity": 3,
+      "fanout_external": 6,
+      "fanout_internal": 0,
+      "halstead_bugprop": 1.271,
+      "halstead_difficulty": 39.266,
+      "halstead_effort": 149724.477,
+      "halstead_timerequired": 8318.026,
+      "halstead_volume": 3813.052,
+      "loc": 100,
+      "maintainability_index": 52.826,
+      "operands_sum": 289,
+      "operands_uniq": 92,
+      "operators_sum": 266,
+      "operators_uniq": 25,
+      "pylint": 100.0,
+      "tiobe": 97.0,
+      "tiobe_compiler": 100.0,
+      "tiobe_complexity": 80.0,
+      "tiobe_coverage": 100.0,
+      "tiobe_duplication": 100.0,
+      "tiobe_fanout": 100.0,
+      "tiobe_functional": 100.0,
+      "tiobe_security": 100.0,
+      "tiobe_standard": 100.0
+    },
+    "median": {
+      "comment_ratio": 17.537,
+      "cyclomatic_complexity": 3,
+      "fanout_external": 6,
+      "fanout_internal": 0,
+      "halstead_bugprop": 1.271,
+      "halstead_difficulty": 39.266,
+      "halstead_effort": 149724.477,
+      "halstead_timerequired": 8318.026,
+      "halstead_volume": 3813.052,
+      "loc": 100,
+      "maintainability_index": 52.826,
+      "operands_sum": 289,
+      "operands_uniq": 92,
+      "operators_sum": 266,
+      "operators_uniq": 25,
+      "pylint": 100.0,
+      "tiobe": 97.0,
+      "tiobe_compiler": 100.0,
+      "tiobe_complexity": 80.0,
+      "tiobe_coverage": 100.0,
+      "tiobe_duplication": 100.0,
+      "tiobe_fanout": 100.0,
+      "tiobe_functional": 100.0,
+      "tiobe_security": 100.0,
+      "tiobe_standard": 100.0
+    },
+    "min": {
+      "comment_ratio": 17.537,
+      "cyclomatic_complexity": 3,
+      "fanout_external": 6,
+      "fanout_internal": 0,
+      "halstead_bugprop": 1.271,
+      "halstead_difficulty": 39.266,
+      "halstead_effort": 149724.477,
+      "halstead_timerequired": 8318.026,
+      "halstead_volume": 3813.052,
+      "loc": 100,
+      "maintainability_index": 52.826,
+      "operands_sum": 289,
+      "operands_uniq": 92,
+      "operators_sum": 266,
+      "operators_uniq": 25,
+      "pylint": 100.0,
+      "tiobe": 97.0,
+      "tiobe_compiler": 100.0,
+      "tiobe_complexity": 80.0,
+      "tiobe_coverage": 100.0,
+      "tiobe_duplication": 100.0,
+      "tiobe_fanout": 100.0,
+      "tiobe_functional": 100.0,
+      "tiobe_security": 100.0,
+      "tiobe_standard": 100.0
+    }
+  }
+}
+```
 
 [Volver al índice](#índice)

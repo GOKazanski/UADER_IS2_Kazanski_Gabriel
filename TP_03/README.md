@@ -1,3 +1,5 @@
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/8532959d-ba73-435e-b900-b3d7ced1fcc1)
+
 # Ingeniería de Software II
 
 ## Trabajo Práctico N 03 - Patrones de Creación
@@ -5,6 +7,7 @@
 ## Índice
 
 * [Consignas](#consignas)
+* [Links](#links)
 * [Presentación del Trabajo Práctico](#presentación-del-trabajo-práctico)
     - Capturas de pantalla
 
@@ -17,4 +20,15 @@
 6. Extienda el ejemplo del taller para prototipos de forma que genere 20 anidamientos y que la carga simulada de procesamiento dure 2 segundos.
 7. Imagine una situación donde pueda ser de utilidad el patrón “abstract factory”.
 
+[Volver al índice](#índice)
+
+## Links
++ [Facultad de Ciencia y Tecnología - UADER](https://fcytcdelu.uader.edu.ar/).
++ [Refactoring - Guru](https://refactoring.guru/es/design-patterns)
+
+[Volver al índice](#índice)
+
 ## Presentación del Trabajo Práctico
+
+
+[Volver al índice](#índice)

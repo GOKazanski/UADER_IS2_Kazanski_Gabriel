@@ -33,16 +33,16 @@ def factorial(num):
     int: El factorial del número dado. Si el número es negativo,
     se imprime un mensaje de error y no se retorna ningún valor.
     """
-    if num < 0: 
+    if num < 0:
         print("Factorial de un número negativo no existe.")
-    elif num == 0: 
+    elif num == 0:
         return 1
-    else: 
+    else:
         fact = 1
-        while(num > 1): 
-            fact *= num 
+        while(num > 1):
+            fact *= num
             num -= 1
-        return fact 
+        return fact
 
 if len(sys.argv) == 1:
     print("Debe informar un número!")

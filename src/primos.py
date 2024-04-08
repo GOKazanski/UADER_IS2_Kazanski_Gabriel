@@ -16,7 +16,7 @@ for num in range(lower, upper + 1):
     #ignora el numero 1 porque no es primo
     if num > 1:
 
-        # realiza otro bucle para encontrar divisores del numero 
+        # realiza otro bucle para encontrar divisores del numero
         for i in range(2, num):
 
             # si el resto es cero hay divisor

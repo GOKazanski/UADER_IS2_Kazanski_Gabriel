@@ -1,6 +1,8 @@
 """
 6. Extienda el ejemplo del taller para prototipos de forma que genere 20 anidamientos y que la
 carga simulada de procesamiento dure 2 segundos.
+
+Con Prototype
 """
 
 import copy
@@ -43,7 +45,7 @@ ultimo_clon = prototipo
 for i in range(2, 22):  # Comienza en 2 porque el prototipo inicial ya es el nivel 1.
     nuevo_clon = ultimo_clon.clonar()
     nuevo_clon.nivel = i
-    nuevo_clon.nombre = f"Clon {i}"
+    nuevo_clon.nombre = f" Clon {i}"
     ultimo_clon.subproceso = nuevo_clon
     ultimo_clon = nuevo_clon
 

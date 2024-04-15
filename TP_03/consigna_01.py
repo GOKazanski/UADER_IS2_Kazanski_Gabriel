@@ -1,6 +1,8 @@
 """
 1. Provea una clase que dado un número entero cualquiera retorne el factorial del mismo,
 debe asegurarse que todas las clases que lo invoquen utilicen la misma instancia de clase.
+
+con Singleton.
 """
 
 class SingletonMeta(type):

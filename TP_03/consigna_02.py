@@ -3,6 +3,8 @@
 clases que necesiten realizarlo. El cálculo de impuestos simplificado deberá recibir un
 valor de importe base imponible y deberá retornar la suma del cálculo de IVA (21%), IIBB (5%)
 y Contribuciones municipales (1,2%) sobre esa base imponible.
+
+Con Factory
 """
 
 from abc import ABC, abstractmethod

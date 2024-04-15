@@ -30,5 +30,22 @@
 
 ## Presentación del Trabajo Práctico
 
+Consigna 1
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/97e7279a-23f0-4e44-a5ed-301fc280717a)
+
+Consigna 2
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/f81f61c5-2968-4c90-ba68-9131669d3b7c)
+
+Consigna 3
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/77638934-bf2d-4996-9215-537f012216d1)
+
+Consigna 4
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/7f1c517c-b128-49e4-be73-bee94bd2fa7c)
+
+Consigna 5
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/84a7f408-9d9b-41ad-be5f-c454af45c4d5)
+
+Consigna 6
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/e65ace2b-986f-499f-a7e8-e246034e9c95)
 
 [Volver al índice](#índice)

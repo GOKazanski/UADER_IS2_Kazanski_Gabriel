@@ -4,58 +4,57 @@ de acuerdo a la condición impositiva del cliente (IVA Responsable, IVA No Inscr
 genere facturas que indiquen tal condición.
 """
 
-class Factura:
-    """
-    Clase base para facturas con un importe total.
-    """
+from abc import ABC, abstractmethod
 
-    def __init__(self, importe_total, condicion_impositiva):
-        """
-        Inicializa una nueva factura con un importe total y una condición impositiva.
-
-        :param importe_total: El importe total de la factura.
-        :param condicion_impositiva: La condición impositiva del cliente.
-        """
+# Producto abstracto
+class Factura(ABC):
+    def __init__(self, importe_total):
         self.importe_total = importe_total
-        self.condicion_impositiva = condicion_impositiva
 
-    def imprimir_factura(self):
-        """
-        Imprime el importe total de la factura y la condición impositiva del cliente.
-        """
-        print(f"Importe total: {self.importe_total}, Condición impositiva: {self.condicion_impositiva}")
+    @abstractmethod
+    def descripcion(self):
+        pass
 
+# Productos concretos
+class FacturaIVAResponsable(Factura):
+    def descripcion(self):
+        return f"Factura IVA Responsable: {self.importe_total}"
 
-class IvaResponsable(Factura):
-    """
-    Factura para clientes con condición impositiva de IVA Responsable.
-    """
-    def __init__(self, importe_total):
-        super().__init__(importe_total, "IVA Responsable")
+class FacturaIVANoInscripto(Factura):
+    def descripcion(self):
+        return f"Factura IVA No Inscripto: {self.importe_total}"
 
+class FacturaIVAExento(Factura):
+    def descripcion(self):
+        return f"Factura IVA Exento: {self.importe_total}"
 
-class IvaNoInscripto(Factura):
-    """
-    Factura para clientes con condición impositiva de IVA No Inscripto.
-    """
-    def __init__(self, importe_total):
-        super().__init__(importe_total, "IVA No Inscripto")
+# Clase Factory
+class FacturaFactory:
+    @staticmethod
+    def crear_factura(tipo, importe_total):
+        if tipo == 'IVA Responsable':
+            return FacturaIVAResponsable(importe_total)
+        elif tipo == 'IVA No Inscripto':
+            return FacturaIVANoInscripto(importe_total)
+        elif tipo == 'IVA Exento':
+            return FacturaIVAExento(importe_total)
+        else:
+            raise ValueError("Tipo de condición impositiva desconocida")
 
+# Cliente (main)
+if __name__ == "__main__":
+    tipo_condicion = 'IVA Responsable'
+    importe_total = 10000
 
-class IvaExento(Factura):
-    """
-    Factura para clientes con condición impositiva de IVA Exento.
-    """
-    def __init__(self, importe_total):
-        super().__init__(importe_total, "IVA Exento")
+    factura = FacturaFactory.crear_factura(tipo_condicion, importe_total)
+    print(factura.descripcion())
 
+    # Ejemplo cambiando la condición impositiva
+    tipo_condicion = 'IVA Exento'
+    factura = FacturaFactory.crear_factura(tipo_condicion, importe_total)
+    print(factura.descripcion())
 
-# Uso de las clases
-factura_responsable = IvaResponsable(1000)
-factura_responsable.imprimir_factura()
-
-factura_no_inscripto = IvaNoInscripto(2000)
-factura_no_inscripto.imprimir_factura()
-
-factura_exento = IvaExento(3000)
-factura_exento.imprimir_factura()
+    # Ejemplo cambiando la condición impositiva
+    tipo_condicion = 'IVA No Inscripto'
+    factura = FacturaFactory.crear_factura(tipo_condicion, importe_total)
+    print(factura.descripcion())

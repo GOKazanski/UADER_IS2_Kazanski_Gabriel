@@ -5,54 +5,41 @@ valor de importe base imponible y deberá retornar la suma del cálculo de IVA (
 y Contribuciones municipales (1,2%) sobre esa base imponible.
 """
 
-class SingletonMeta(type):
-    """
-    Esta es una metaclase que se encarga de implementar el patrón Singleton.
-    Garantiza que solo se cree una instancia de una clase que use esta metaclase.
-    """
-    _instances = {}
+from abc import ABC, abstractmethod
 
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            # Si la instancia no existe, la crea y la guarda en el diccionario.
-            instance = super().__call__(*args, **kwargs)
-            cls._instances[cls] = instance
-        # Retorna la instancia existente.
-        return cls._instances[cls]
 
-class TaxCalculator(metaclass=SingletonMeta):
-    """
-    Esta clase calcula los impuestos sobre un importe base. Implementa el patrón Singleton
-    para asegurar que todas las clases que lo utilicen accedan a la misma instancia.
-    """
+class TaxCalculator(ABC):
+    @abstractmethod
+    def calculate(self, amount: float) -> float:
+        pass
 
-    def calculate_taxes(self, base_amount):
-        """
-        Calcula los impuestos basados en el importe base proporcionado.
 
-        :param base_amount: El importe base imponible.
-        :return: La suma total de los impuestos calculados.
-        """
-        if base_amount < 0:
-            return "El importe base no puede ser negativo."
+# devuelve a cliente el calculo de los impuestos más el importe cargado
+class GeneralTaxCalculator(TaxCalculator):
+    def calculate(self, amount: float) -> float:
+        IVA = 0.21 #21%
+        IIBB = 0.05 #5%
+        CONTRIBUCIONES = 0.012 #1,2%
+        total_tax = amount * (IVA + IIBB + CONTRIBUCIONES)
+        return total_tax + amount
 
-        IVA = 0.21  # 21%
-        IIBB = 0.05  # 5%
-        MunicipalContribution = 0.012  # 1.2%
 
-        # Calcula cada uno de los impuestos.
-        total_taxes = (base_amount * IVA) + (base_amount * IIBB) + (base_amount * MunicipalContribution)
-        return total_taxes
+class TaxCalculatorFactory:
+    @staticmethod
+    def get_tax_calculator() -> TaxCalculator:
+        return GeneralTaxCalculator()
 
-# Uso de la clase TaxCalculator para calcular impuestos
+
+# Cliente (main)
 if __name__ == "__main__":
-    tax_calculator1 = TaxCalculator()
-    tax_calculator2 = TaxCalculator()
+    # El cliente solicita al factory una instancia de una calculadora de impuestos.
+    tax_calculator = TaxCalculatorFactory.get_tax_calculator()
 
-    # Verifica si ambas variables apuntan a la misma instancia.
-    print(f"¿Es la misma instancia de TaxCalculator?: {tax_calculator1 is tax_calculator2}")
+    importe_base = 10000  # Importe base imponible
+    total_con_impuestos = tax_calculator.calculate(importe_base)
 
-    # Calcula y muestra los impuestos para un importe base.
-    base_amount = 1000  # Supongamos un importe base de 1000 unidades monetarias.
-    taxes = tax_calculator1.calculate_taxes(base_amount)
-    print(f"Total de impuestos sobre un importe base de {base_amount}: {taxes}")
+    impuestos = total_con_impuestos - importe_base
+
+    print(f"Importe base: {importe_base}")
+    print(f"La suma de los impuestos es: {impuestos}")
+    print(f"Total con impuestos: {total_con_impuestos}")

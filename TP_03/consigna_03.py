@@ -4,42 +4,60 @@ mostrador, retirada por el cliente o enviada por delivery. A los efectos prácti
 clase imprima el método de entrega.
 """
 
+from abc import ABC, abstractmethod
+
+# Producto
 class Hamburguesa:
-    """
-    Esta clase representa una hamburguesa que puede ser entregada
-    de diferentes maneras: en el mostrador, para llevar por el cliente,
-    o mediante delivery.
-    """
+    def __init__(self, entrega=""):
+        self.metodo_entrega = entrega
 
-    def __init__(self, metodo_entrega="mostrador"):
-        """
-        Inicializa una nueva instancia de la hamburguesa con un método de entrega.
+    def __str__(self):
+        return f"Hamburguesa entregada mediante: {self.metodo_entrega}"
 
-        :param metodo_entrega: El método de entrega inicial de la hamburguesa.
-        """
-        self.metodo_entrega = metodo_entrega
+# Builder Interface
+class Builder(ABC):
+    @abstractmethod
+    def preparar_hamburguesa(self, metodo_entrega):
+        pass
 
-    def establecer_metodo_entrega(self, metodo_entrega):
-        """
-        Establece o cambia el método de entrega de la hamburguesa.
+    @abstractmethod
+    def obtener_resultado(self):
+        pass
 
-        :param metodo_entrega: El nuevo método de entrega para la hamburguesa.
-        """
-        self.metodo_entrega = metodo_entrega
+# ConcreteBuilder
+class HamburguesaBuilder(Builder):
+    def __init__(self):
+        self.hamburguesa = None
 
-    def imprimir_metodo_entrega(self):
-        """
-        Imprime el método de entrega de la hamburguesa.
-        """
-        print(f"El método de entrega de la hamburguesa es: {self.metodo_entrega}.")
+    def preparar_hamburguesa(self, metodo_entrega):
+        self.hamburguesa = Hamburguesa(metodo_entrega)
 
+    def obtener_resultado(self):
+        return self.hamburguesa
 
-# Creando una hamburguesa y especificando el método de entrega
-hamburguesa1 = Hamburguesa("delivery")
-hamburguesa1.imprimir_metodo_entrega()
+# Director
+class Director:
+    def __init__(self, builder):
+        self.builder = builder
 
-# Creando otra hamburguesa con el método de entrega por defecto y luego cambiándolo
-hamburguesa2 = Hamburguesa()
-hamburguesa2.imprimir_metodo_entrega()  # Mostrará "mostrador" como método de entrega por defecto
-hamburguesa2.establecer_metodo_entrega("para llevar")
-hamburguesa2.imprimir_metodo_entrega()
+    def construir_hamburguesa(self, metodo_entrega):
+        self.builder.preparar_hamburguesa(metodo_entrega)
+        return self.builder.obtener_resultado()
+
+# Main
+def main():
+    builder = HamburguesaBuilder()
+    director = Director(builder)
+
+    hamburguesa_mostrador = director.construir_hamburguesa("en mostrador")
+    print(hamburguesa_mostrador)
+
+    hamburguesa_cliente = director.construir_hamburguesa("retirada por el cliente")
+    print(hamburguesa_cliente)
+
+    hamburguesa_delivery = director.construir_hamburguesa("enviada por delivery")
+    print(hamburguesa_delivery)
+
+if __name__ == "__main__":
+    main()
+

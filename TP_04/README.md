@@ -53,7 +53,9 @@ implementar.
 
 Para crear todos los archivos desde consola de bash
 ```
-for i in {01..05}; do touch "consigna_04_$i.py" done
+for i in {01..05};
+do touch "consigna_04_$i.py"
+done
 ```
 consigna 01
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/9ed47d35-fcf8-48b6-a264-370f4f459324)

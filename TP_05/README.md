@@ -54,15 +54,15 @@ for i in {01..05};
 do touch "consigna_05_$i.py"
 done
 ```
-consigna 1
++ consigna 1
 
-consigna 2
++ consigna 2
 
-consigna 3
++ consigna 3
 
-consigna 4
++ consigna 4
 
-consigna 5
++ consigna 5
 
 
 [Volver al índice](#índice)

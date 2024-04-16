@@ -57,16 +57,16 @@ for i in {01..05};
 do touch "consigna_04_$i.py"
 done
 ```
-consigna 01
++ consigna 01
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/9ed47d35-fcf8-48b6-a264-370f4f459324)
 
-consigna 02
++ consigna 02
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/4be9b4ac-cb86-4742-8c3c-bf7a0d66a283)
 
-consigna 03
++ consigna 03
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/748f4d33-6496-4828-859e-1a7cfa98133e)
 
-consigna 04
++ consigna 04
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/5c814e57-5a4e-452d-913f-925acd0f1477)
 
 [Volver al índice](#índice)

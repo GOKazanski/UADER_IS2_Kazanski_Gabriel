@@ -6,10 +6,10 @@ pasará al siguiente en la cadena. Implemente una clase que consuma números
 primos y otra números pares. Puede ocurrir que un número no sea consumido
 por ninguna clase en cuyo caso se marcará como no consumido.
 """
-import os
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any, Optional
+import os
 
 os.system("cls" if os.name == 'nt' else "clear")  # Limpia la consola según el sistema operativo
 

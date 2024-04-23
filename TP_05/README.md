@@ -55,12 +55,16 @@ do touch "consigna_05_$i.py"
 done
 ```
 + consigna 1
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/7c70db35-1b1c-4de3-8578-7b28de186980)
 
 + consigna 2
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/02c91505-bb7c-463d-b8b6-8f2758606d07)
 
 + consigna 3
 
+
 + consigna 4
+
 
 + consigna 5
 

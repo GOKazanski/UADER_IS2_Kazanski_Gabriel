@@ -61,7 +61,9 @@ done
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/02c91505-bb7c-463d-b8b6-8f2758606d07)
 
 + consigna 3
-
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/6483d133-08f1-4564-adc5-17b03e0ea18b)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/c7cacb16-d01c-4d8b-ba0d-c54274452cf3)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/9dde8f5d-32ca-4604-b494-23679e3eda52)
 
 + consigna 4
 

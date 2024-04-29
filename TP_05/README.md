@@ -69,6 +69,6 @@ done
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/e96b17ff-a478-4b52-b6c6-01faba891f3a)
 
 + consigna 5
-
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/5d3e2acb-4558-4f40-982b-0d9e1846d69f)
 
 [Volver al índice](#índice)

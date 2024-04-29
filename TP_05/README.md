@@ -2,7 +2,7 @@
 
 # Ingeniería de Software II
 
-## Trabajo Práctico N 04 - Patrones de Comportamiento
+## Trabajo Práctico N 05 - Patrones de Comportamiento
 
 ## Índice
 

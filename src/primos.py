@@ -1,25 +1,24 @@
 #!/usr/bin/python3
-# Python program to display all the prime numbers within an interval
+# Programa en Python para mostrar todos los números primos dentro de un intervalo
+import os
+os.system("cls" if os.name == 'nt' else "clear")  # Limpia la consola según el sistema operativo
 
-# lower: valor de comienzo
-# upper: valor del final
-lower = 1
-upper = 100
+lower = 1 # lower: valor inicial
+upper = 100 # upper: valor final
 
-# imprime el listado de numeros primos desde valor de comienzo hasta valor final
-print("Prime numbers between", lower, "and", upper, "are:")
+# imprime la lista de números primos desde el valor inicial hasta el valor final
+print("Los números primos entre", lower, "y", upper, "son:")
 
-# realiza bucle for para recorrer cada uno de los numeros que hay en el rango
+# realiza un bucle for para recorrer cada uno de los números en el rango
 for num in range(lower, upper + 1):
-    # all prime numbers are greater than 1
+    # todos los números primos son mayores que 1
 
-    #ignora el numero 1 porque no es primo
-    if num > 1:
+    if num > 1:# omite el número 1 porque no es primo
 
-        # realiza otro bucle para encontrar divisores del numero
+        # realiza otro bucle para encontrar divisores del número
         for i in range(2, num):
 
-            # si el resto es cero hay divisor
+            # si el resto es cero, hay un divisor
             if (num % i) == 0:
                 break
         else:

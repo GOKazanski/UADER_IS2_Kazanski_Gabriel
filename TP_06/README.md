@@ -9,7 +9,7 @@
 * [Consignas](#consignas)
 * [Links](#links)
 * [Presentación del Trabajo Práctico](#presentación-del-trabajo-práctico)
-    - Capturas de pantalla
+    - [Taller](#taller)
 
 ## Consignas
 1) La instalación dispone de un programa llamado getJason.pyc legado de un sistema
@@ -102,4 +102,12 @@ necesarias para conseguirlo.
 
 ## Presentación del Trabajo Práctico
 
+### Taller
+```
+pip install uncompyle6
+uncompyle6 old_primes.pyc
+uncompyle6 old_primes.pyc > old_primes_00.py
+
+python -m compileall old_primes_02.py
+```
 [Volver al índice](#índice)

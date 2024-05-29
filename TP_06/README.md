@@ -10,6 +10,7 @@
 * [Links](#links)
 * [Presentación del Trabajo Práctico](#presentación-del-trabajo-práctico)
     - [Taller](#taller)
+    - [Consigna 2](#consigna-2)
 
 ## Consignas
 1) La instalación dispone de un programa llamado getJason.pyc legado de un sistema
@@ -37,7 +38,7 @@ documentación y satisfaga los requerimientos de reuso.
 Python (3.11 por ejemplo).
 - i) Remueva los comentarios hechos por el proceso de de-compilación.
 - j) Genere la nueva versión de getJason.pyc mediante compilación
-- i) Utilice python –m compileall getJason.py
+- l) Utilice python –m compileall getJason.py
 - k) Verifique y valide.
 3) Continuando con el programa getJason.pyc (y su versión fuente getJason.py) del
 ejercicio anterior se ha decidido que el programa tiene un código deficiente para lo
@@ -110,4 +111,57 @@ uncompyle6 old_primes.pyc > old_primes_00.py
 
 python -m compileall old_primes_02.py
 ```
+### Consigna 2
+Punto 2. b)
+```
+PS C:\Users\gokaz\OneDrive\Documentos\UADER\3Anio\IS2\Códigos\UADER_IS2_Kazanski_Gabriel\TP_06> python --version
+Python 2.7.18
+PS C:\Users\gokaz\OneDrive\Documentos\UADER\3Anio\IS2\Códigos\UADER_IS2_Kazanski_Gabriel\TP_06> python.exe .\getJason.pyc ./sitedata.json token1
+C598-ECF9-F0F7-881A
+```
++ Paso 1: Colección de datos
+    - Código fuente: getJason.pyc
+    - Librerías: json, sys
++ Paso 2: Extraer información
+    - Inventario de objetos disponibles: Archivos: getJason.py, sitedata.json - Librerías: json, sys
++ Paso 3: Extraer estructura
+    - Variables: jsonfile, jsonkey, myfile, data, obj
++ Paso 4: Registra funcionalidad
+    - ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/796c35ea-8d83-4877-8ed4-0e6041080abc)
++ Paso 5: Registra flujo de datos
+    - Secuencia: Leer archivo -> obtener datos de JSON -> Acceder a clave -> Imprimir resultado
++ Paso 6: Documentación
+    - ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/89e2a871-741d-4feb-8d11-1ce3e46bf17f)
+
+Punto 2. d)
+```
+PS C:\Users\gokaz\OneDrive\Documentos\UADER\3Anio\IS2\Códigos\UADER_IS2_Kazanski_Gabriel\TP_06> uncompyle6 getJason.pyc > getJason.py
+PS C:\Users\gokaz\OneDrive\Documentos\UADER\3Anio\IS2\Códigos\UADER_IS2_Kazanski_Gabriel\TP_06> more getJason.py
+# uncompyle6 version 3.9.1
+# Python bytecode version base 2.7 (62211)
+# Decompiled from: Python 3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]
+# Embedded file name: getJason.py
+# Compiled at: 2022-06-14 16:15:55
+import json, sys
+jsonfile = sys.argv[1]
+jsonkey = sys.argv[2]
+with open(jsonfile, 'r') as myfile:
+    data = myfile.read()
+obj = json.loads(data)
+print str(obj[jsonkey])
+
+# okay decompiling getJason.pyc
+```
+Punto 2. e)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/0a88911b-2a77-42d7-9e94-b6364c703b82)
+
+Punto 2. h)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/ec50c1ad-092c-43b1-91b9-367cd06fa405)
+
+Punto 2. l)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/b7fff3b6-8556-4297-acdd-b19f043531a4)
+
+Punto 2. k)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/a7aa76d6-d330-4357-a3be-f9dc060791c6)
+
 [Volver al índice](#índice)

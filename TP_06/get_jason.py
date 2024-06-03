@@ -112,11 +112,9 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
 # ---------- Para consola
-# python getJason.py -v
+# python get_jason.py -v
 
-# python getJason.py sitedata.json token1 viejo
+# python get_jason.py sitedata.json token1 viejo
 
-# python getJason.py sitedata.json token1 nuevo
+# python get_jason.py sitedata.json token1 nuevo

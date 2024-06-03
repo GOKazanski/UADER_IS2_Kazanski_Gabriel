@@ -11,6 +11,8 @@
 * [Presentación del Trabajo Práctico](#presentación-del-trabajo-práctico)
     - [Taller](#taller)
     - [Consigna 2](#consigna-2)
+    - [Consigna 3](#consigna-3)
+    - [Consigna 4](#consigna-4)
 
 ## Consignas
 1) La instalación dispone de un programa llamado getJason.pyc legado de un sistema
@@ -163,5 +165,21 @@ Punto 2. l)
 
 Punto 2. k)
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/a7aa76d6-d330-4357-a3be-f9dc060791c6)
+
+[Volver al índice](#índice)
+
+### Consigna 3
+Punto 3. g)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/b85f1088-2485-46d6-bb10-68c18977f39a)
+
+Punto 3. h)
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/dd655b8e-bbdf-4428-8dc8-b5b1a6e8e875)
+
+[Volver al índice](#índice)
+
+### Consigna 4
+
+
+
 
 [Volver al índice](#índice)

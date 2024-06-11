@@ -64,7 +64,7 @@ class CuentaBancaria(ManejadorCuentas):
         """
         if token_solicitud == self.token and self.saldo >= monto_solicitud:
             self.saldo -= monto_solicitud
-            print(f"Se realizó el pago desde la cuenta '{self.token}' por un monto de ${monto_solicitud}.")
+            print(f"Pago realizado desde '{self.token}' por ${monto_solicitud}.")
             return monto_solicitud
         return super().manejar_solicitud(token_solicitud, monto_solicitud)
 
@@ -149,7 +149,7 @@ def main():
         else:
             print("Error: argumentos insuficientes.")
             print("Mostrar versión: [-v | --version]")
-            print("Uso: <token1 = Saldo inicial > <token2 = Saldo inicial> <MONTO_PAGO = Valor del Pago>")
+            print("Uso: <token1= Saldo inicial> <token2= Saldo inicial> <MONTO_PAGO= Importe>")
             print("\n")
             return
 

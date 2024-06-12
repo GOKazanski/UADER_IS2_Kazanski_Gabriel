@@ -185,4 +185,7 @@ Punto 4. h)
 
 ![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/99084524-9f76-43a6-8100-a7f46bd6477a)
 
+Multimetric
+![image](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/assets/90653565/30dcdd82-bba8-4d00-9d65-41dd2a7557d9)
+
 [Volver al índice](#índice)

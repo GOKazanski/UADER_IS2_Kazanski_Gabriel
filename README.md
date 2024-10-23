@@ -11,3 +11,6 @@ UADER - Ingeniería de Software II - 2024
 + [TP N 05](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_05)
 + [TP N 06](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_06)
 + [TP N 07](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_07)
++ [TP N 08](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_08)
++ [TP N 09](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_09)
++ [TP Final](https://github.com/GOKazanski/UADER_IS2_Kazanski_Gabriel/tree/main/TP_Final)

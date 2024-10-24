@@ -3,6 +3,8 @@
   - [Grupo](#grupo)
   - [Entrega 1 - Diseño de componentes](#entrega-1---diseño-de-componentes)
     - [Diagrama de Clases](#diagrama-de-clases)
+    - [Diagrama de Secuencia](#diagrama-de-secuencia)
+    - [Diagrama de Actividad](#diagrama-de-actividad)
     - [Diagrama de Casos de uso](#diagrama-de-casos-de-uso)
     - [Diagrama de Estados](#diagrama-de-estados)
     - [Diagrama de Componentes](#diagrama-de-componentes)
@@ -34,7 +36,13 @@ Base de datos:
 La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los componentes del Back obtienen los datos.
 
 ### Diagrama de Clases
-![Imagen de WhatsApp 2024-10-23 a las 19 55 59_2aa975a7](https://github.com/user-attachments/assets/fbd247c9-7b7d-411c-a843-e8029997aa83)
+![image](https://github.com/user-attachments/assets/a2ed8469-74dd-4fc7-bf94-be2211b14261)
+
+### Diagrama de Secuencia
+![image](https://github.com/user-attachments/assets/a8a903ba-ec6d-4825-ab92-cc2c6d94d7fc)
+
+### Diagrama de Actividad
+![image](https://github.com/user-attachments/assets/50031db3-7fef-4c65-99db-277269db2b3e)
 
 ### Diagrama de Casos de uso
 ![Imagen de WhatsApp 2024-10-23 a las 19 55 59_a3f0c4f9](https://github.com/user-attachments/assets/e968b386-fcd6-4934-9c7a-63adfaa78d96)

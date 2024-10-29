@@ -1,12 +1,20 @@
 import boto3
-import uuid
+import json
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
-class CorporateData:
-    _instance = None
+# Cargar credenciales AWS desde el archivo JSON
+with open("IS2_TPFI_credentials.json") as cred_file:
+    creds = json.load(cred_file)
+aws_access_key = creds["accesskey"]
+aws_secret_key = creds["secretkey"]
+region = creds["region"]
 
-    def __new__(cls, aws_access_key, aws_secret_key, region):
+class CorporateData:
+    _instance = None  # Atributo de clase para almacenar la instancia Singleton
+
+    def __new__(cls):
         if cls._instance is None:
+            # Crear una nueva instancia si no existe y configurarla para usar DynamoDB
             cls._instance = super(CorporateData, cls).__new__(cls)
             cls._instance.dynamodb = boto3.resource(
                 'dynamodb',
@@ -18,6 +26,7 @@ class CorporateData:
         return cls._instance
 
     def getData(self, uuid_session, uuid_cpu, id):
+        """Recupera datos de la sede dada por el ID. Retorna JSON con los datos o mensaje de error."""
         try:
             response = self.table.get_item(Key={'id': id})
             return response.get('Item', {"error": "Record not found"})
@@ -25,10 +34,12 @@ class CorporateData:
             return {"error": str(e)}
 
     def getCUIT(self, uuid_session, uuid_cpu, id):
+        """Obtiene el CUIT de la sede especificada por el ID."""
         data = self.getData(uuid_session, uuid_cpu, id)
         return {"CUIT": data.get('CUIT', 'CUIT not found')}
 
     def getSeqID(self, uuid_session, uuid_cpu, id):
+        """Obtiene y aumenta en 1 el identificador de secuencia único en la base de datos."""
         data = self.getData(uuid_session, uuid_cpu, id)
         seq_id = data.get('idSeq', 0) + 1
         self.table.update_item(
@@ -39,5 +50,6 @@ class CorporateData:
         return {"idSeq": seq_id}
 
     def listCorporateData(self, id):
+        """Lista todos los registros de la tabla CorporateData."""
         response = self.table.scan()
         return response.get('Items', [])

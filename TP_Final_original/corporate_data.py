@@ -2,9 +2,10 @@ import boto3
 import json
 from botocore.exceptions import NoCredentialsError, PartialCredentialsError
 
-# Cargar credenciales AWS desde el archivo JSON
-with open("IS2_TPFI_credentials.json") as cred_file:
+# Cargar credenciales desde la ruta completa del archivo JSON
+with open("D:/UADER/3Anio/IS2/Códigos/UADER_IS2_Kazanski_Gabriel/TP_Final/IS2_TPFI_credentials.json") as cred_file:
     creds = json.load(cred_file)
+
 aws_access_key = creds["accesskey"]
 aws_secret_key = creds["secretkey"]
 region = creds["region"]

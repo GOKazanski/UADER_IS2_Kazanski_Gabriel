@@ -54,7 +54,7 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
 ![Imagen de WhatsApp 2024-10-23 a las 19 55 58_8b5f1541](https://github.com/user-attachments/assets/c54528a9-517b-4d4c-932b-d0153c59a8be)
 
 ## Entrega 2 - Aplicativo implementado
-
+![Imagen de WhatsApp 2024-10-29 a las 19 03 23_b55c0b2c](https://github.com/user-attachments/assets/4c4425f4-8628-40d7-b36f-e17b4582c06c)
 
 ## Entrega 3 - Aplicativo probado
 

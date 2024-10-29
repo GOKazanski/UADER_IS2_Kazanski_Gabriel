@@ -119,7 +119,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-TP_Final/IS2_TPFI_credentials.py
+TP_Final/IS2_TPFI_credentials.json
 TP_Final/IS2_TPFI_insert.py
 TP_Final/IS2_TPFI_testpy
 TP_Final/demo.py

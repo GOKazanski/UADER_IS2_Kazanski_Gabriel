@@ -119,6 +119,11 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+IS2_TPFI_credentials.py
+IS2_TPFI_insert.py
+IS2_TPFI_testpy
+demo.py
+
 # Environments
 .env
 .venv

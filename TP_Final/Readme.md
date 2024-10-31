@@ -92,7 +92,6 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
     - CorporateLog.py
     - Log.py
   - .gitignore
-  - clear_dynamodb_table.py
   - Readme.md
   - test_corporate.py
   - UADER_IS2_listCorporateData.py

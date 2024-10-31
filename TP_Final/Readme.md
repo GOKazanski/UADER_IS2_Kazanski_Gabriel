@@ -11,13 +11,16 @@
   - [Entrega 2 - Aplicativo implementado](#entrega-2---aplicativo-implementado)
     - [Ejecución de UADER\_IS2\_TPFI.py del grupo](#ejecución-de-uader_is2_tpfipy-del-grupo)
   - [Entrega 3 - Aplicativo probado](#entrega-3---aplicativo-probado)
-    - [Ejecución de UADER\_IS2\_TPFI.py individual](#ejecución-de-uader_is2_tpfipy-individual)
+    - [Ejecución de UADER\_IS2\_TPFI.py](#ejecución-de-uader_is2_tpfipy)
+    - [Ejecución de test\_corporate.py](#ejecución-de-test_corporatepy)
   - [Entrega 4 - Memoria](#entrega-4---memoria)
     - [Archivos del TP](#archivos-del-tp)
     - [Descripción del Diseño del Sistema](#descripción-del-diseño-del-sistema)
     - [Patrón Singleton](#patrón-singleton)
     - [Uso de AWS DynamoDB](#uso-de-aws-dynamodb)
     - [Resumen de la Arquitectura y Conexiones](#resumen-de-la-arquitectura-y-conexiones)
+    - [Ejecución de UADER\_IS2\_listCorporateData.py](#ejecución-de-uader_is2_listcorporatedatapy)
+    - [Ejecución de UADER\_IS2\_listLog.py](#ejecución-de-uader_is2_listlogpy)
     - [Pruebas de test](#pruebas-de-test)
 
 # Ingeniería de Software II  - Trabajo Práctico Final
@@ -64,14 +67,19 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
 - [Volver al Índice](#índice)
 
 ## Entrega 2 - Aplicativo implementado
+
 ### Ejecución de UADER_IS2_TPFI.py del grupo
 ![Imagen de WhatsApp 2024-10-29 a las 19 03 23_b55c0b2c](https://github.com/user-attachments/assets/4c4425f4-8628-40d7-b36f-e17b4582c06c)
 
 - [Volver al Índice](#índice)
 
 ## Entrega 3 - Aplicativo probado
-### Ejecución de UADER_IS2_TPFI.py individual
-![image](https://github.com/user-attachments/assets/813fb35d-6e63-4d67-be06-5ef9a9ce6fc3)
+
+### Ejecución de UADER_IS2_TPFI.py
+![image](https://github.com/user-attachments/assets/c8a3910d-87a2-4ddf-ab1f-136b4d3e134d)
+
+### Ejecución de test_corporate.py
+![image](https://github.com/user-attachments/assets/2d19e4b9-84ad-4c3e-8322-89be712cca30)
 
 - [Volver al Índice](#índice)
 
@@ -79,6 +87,10 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
 
 ### Archivos del TP
 - TP_Final\
+  - Components\
+    - CorporateData.py
+    - CorporateLog.py
+    - Log.py
   - .gitignore
   - clear_dynamodb_table.py
   - Readme.md
@@ -86,10 +98,6 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
   - UADER_IS2_listCorporateData.py
   - UADER_IS2_listLog.py
   - UADER_IS2_TPFI.py
-  - Components\
-    - CorporateData.py
-    - CorporateLog.py
-    - Log.py
 
 ### Descripción del Diseño del Sistema
 
@@ -114,7 +122,13 @@ La base de datos de estilo DynamoDB que se encuentra alojada en AWS, donde los c
 - Interacciones: CorporateData interactúa con CorporateLog cuando se registra cada operación realizada en la base de datos. Las llamadas a los métodos en CorporateData (como getData y getCUIT) resultan en registros de auditoría que son gestionados a través de CorporateLog.
 - Seguridad y Manejo de Errores: Cada método de consulta en CorporateData y CorporateLog maneja excepciones mediante mensajes de error, asegurando que los errores en la conexión o las consultas a DynamoDB no interrumpan el funcionamiento del sistema.
 
+### Ejecución de UADER_IS2_listCorporateData.py
+
+
+### Ejecución de UADER_IS2_listLog.py
+
+
 ### Pruebas de test
-![image](https://github.com/user-attachments/assets/2d19e4b9-84ad-4c3e-8322-89be712cca30)
+![image](https://github.com/user-attachments/assets/40373c2a-59dd-43a1-9def-55714a130cc4)
 
 - [Volver al Índice](#índice)

@@ -21,7 +21,6 @@
     - [Uso de AWS DynamoDB](#uso-de-aws-dynamodb)
     - [Configuración de las credenciales en AWS](#configuración-de-las-credenciales-en-aws)
     - [Resumen de la Arquitectura y Conexiones](#resumen-de-la-arquitectura-y-conexiones)
-    - [Ejecución de UADER\_IS2\_TPFI.py](#ejecución-de-uader_is2_tpfipy-1)
     - [Ejecución de UADER\_IS2\_listCorporateData.py](#ejecución-de-uader_is2_listcorporatedatapy)
     - [Ejecución de UADER\_IS2\_listLog.py](#ejecución-de-uader_is2_listlogpy)
     - [Pruebas de test](#pruebas-de-test)
@@ -138,41 +137,11 @@ Default output format [None]: Json
 - Interacciones: CorporateData interactúa con CorporateLog cuando se registra cada operación realizada en la base de datos. Las llamadas a los métodos en CorporateData (como getData y getCUIT) resultan en registros de auditoría que son gestionados a través de CorporateLog.
 - Seguridad y Manejo de Errores: Cada método de consulta en CorporateData y CorporateLog maneja excepciones mediante mensajes de error, asegurando que los errores en la conexión o las consultas a DynamoDB no interrumpan el funcionamiento del sistema.
 
-### Ejecución de UADER_IS2_TPFI.py
-![image](https://github.com/user-attachments/assets/0761e99f-9bb0-4f48-8444-b3ae8294075e)
-![image](https://github.com/user-attachments/assets/220a49ab-f9f3-4ceb-9ed6-38c46e24007d)
-![image](https://github.com/user-attachments/assets/47e1b459-cf04-4c08-a066-b96d7c2d366c)
-![image](https://github.com/user-attachments/assets/749fadc0-88d0-4460-8161-cfd825a303b1)
-![image](https://github.com/user-attachments/assets/f85ad534-57a9-424e-a47b-ac242defc4da)
-![image](https://github.com/user-attachments/assets/82550b3e-0088-4f1b-a7bb-849c657af84c)
-![image](https://github.com/user-attachments/assets/346023f6-6be7-4f8b-98ce-abe988709f55)
-![image](https://github.com/user-attachments/assets/fb427b00-a2c2-46d3-aeee-952c78065d73)
-
 ### Ejecución de UADER_IS2_listCorporateData.py
-![image](https://github.com/user-attachments/assets/4346102a-f98b-4996-95dc-3fecba836630)
-![image](https://github.com/user-attachments/assets/bb93da73-877d-463a-bbe5-085bf7e58d28)
-![image](https://github.com/user-attachments/assets/7e295591-826f-4429-832a-fa6789997dbb)
+![image](https://github.com/user-attachments/assets/4d206099-b53f-4d95-bb65-f583476d2029)
 
 ### Ejecución de UADER_IS2_listLog.py
-![image](https://github.com/user-attachments/assets/0b1b5631-455d-4d65-8e32-0e26c764ef82)
-![image](https://github.com/user-attachments/assets/82b85c2c-a5fc-4a4b-a38c-19b06a549f92)
-![image](https://github.com/user-attachments/assets/bd7bfbf8-3e38-4d92-a14b-a54acd8d9296)
-![image](https://github.com/user-attachments/assets/e6142f70-472f-4e0e-a2b9-97e9eb8dded1)
-![image](https://github.com/user-attachments/assets/a2a36c03-068a-421e-922c-556448e07c2a)
-![image](https://github.com/user-attachments/assets/9a0bfdc2-5798-4675-902f-36ed215127a3)
-![image](https://github.com/user-attachments/assets/26aa2caf-578e-4d64-beb3-e049b02e2b4c)
-![image](https://github.com/user-attachments/assets/e8b8c481-13a3-4bd6-bb80-b6b0cadb0287)
-![image](https://github.com/user-attachments/assets/91d46983-05b2-45de-b119-eef608fe898a)
-![image](https://github.com/user-attachments/assets/eed41875-6e0e-4d14-ae74-2504cb55d21b)
-![image](https://github.com/user-attachments/assets/273134cc-c99c-465a-8b67-b60e021f48ae)
-![image](https://github.com/user-attachments/assets/2f4eaab5-07a6-495a-bcd7-e5efa3e3d01a)
-![image](https://github.com/user-attachments/assets/480f25c0-f8a1-4d8b-806c-330244d20775)
-![image](https://github.com/user-attachments/assets/b56ae78d-578e-404b-8dd2-0c097aae4cd0)
-![image](https://github.com/user-attachments/assets/a3096488-9ef3-45ef-a6b2-adfd4383198c)
-![image](https://github.com/user-attachments/assets/7b0b41a4-201d-4775-a18b-a5f000a51488)
-![image](https://github.com/user-attachments/assets/fe446cd4-fc68-410b-a189-1e55d3459195)
-![image](https://github.com/user-attachments/assets/5b175610-8743-42a0-887d-9e665cbec222)
-![image](https://github.com/user-attachments/assets/8d76c8bb-ae4a-4318-934d-b39b904f5c41)
+clear
 
 ### Pruebas de test
 ![image](https://github.com/user-attachments/assets/40373c2a-59dd-43a1-9def-55714a130cc4)

@@ -30,6 +30,7 @@ class CorporateData:
         self.table = self.dynamodb.Table('CorporateData')
         logger.debug("Se inicializa la clase CorporateData")
 
+
     def getData(self, uuid, uuidCPU, id):
         """Este es un método llamado getData que recupera un elemento de una tabla de DynamoDB.
           Se necesitan tres parámetros: uuid, uuidCPU e id."""
@@ -128,10 +129,15 @@ class CorporateData:
             )
             items = response.get('Items', [])
 
+            """
             for item in items:
                 print(f"Entrada:\n{json.dumps(item, indent=2, default=self.decimal_default, ensure_ascii=False)}\n")
-
             return True
+            """
+
+            logger.info(f"Entradas encontradas: {len(items)}")
+            return items  # Devuelve la lista de elementos en lugar de True
+
         except botocore.exceptions.ClientError as e:
             logger.error(f'Error al obtener los datos: {str(e)}')
             return json.dumps({"error": str(e)})
@@ -150,11 +156,16 @@ class CorporateData:
                  FilterExpression=Attr('CPUid').eq(uuid_CPU)
             )
             items = response.get('Items', [])
-
+            """
             for item in items:
                 print(f"Entrada:\n{json.dumps(item, indent=2, default=self.decimal_default, ensure_ascii=False)}\n")
 
             return True
+            """
+
+            logger.info(f"Entradas encontradas en CorporateLog: {len(items)}")
+            return items  # Devuelve la lista de elementos
+
         except botocore.exceptions.ClientError as e:
             logger.error(f'Error al obtener los datos: {str(e)}')
             return json.dumps({"error": str(e)})

@@ -21,6 +21,7 @@
     - [Uso de AWS DynamoDB](#uso-de-aws-dynamodb)
     - [Configuración de las credenciales en AWS](#configuración-de-las-credenciales-en-aws)
     - [Resumen de la Arquitectura y Conexiones](#resumen-de-la-arquitectura-y-conexiones)
+    - [Componentes de la Aplicación](#componentes-de-la-aplicación)
     - [Ejecución de UADER\_IS2\_TPFI.py](#ejecución-de-uader_is2_tpfipy-1)
     - [Ejecución de UADER\_IS2\_listCorporateData.py](#ejecución-de-uader_is2_listcorporatedatapy)
     - [Ejecución de UADER\_IS2\_listLog.py](#ejecución-de-uader_is2_listlogpy)
@@ -31,13 +32,13 @@
 
 ## Docentes
 - Profesor Pedro Ernesto Colla
-- Auxiliar Hernán Sanchez
+- Auxiliar Hernán Sánchez
 
 ## Grupo
 - Enzo Etcheto
+- Gabriel Omar Kazanski
 - Luigi Mete
 - Maximiliano Kazanski
-- Gabriel Omar Kazanski
 
 ## Entrega 1 - Diseño de componentes
 
@@ -137,6 +138,39 @@ Default output format [None]: Json
 
 - Interacciones: CorporateData interactúa con CorporateLog cuando se registra cada operación realizada en la base de datos. Las llamadas a los métodos en CorporateData (como getData y getCUIT) resultan en registros de auditoría que son gestionados a través de CorporateLog.
 - Seguridad y Manejo de Errores: Cada método de consulta en CorporateData y CorporateLog maneja excepciones mediante mensajes de error, asegurando que los errores en la conexión o las consultas a DynamoDB no interrumpan el funcionamiento del sistema.
+
+### Componentes de la Aplicación
+
+- CorporateData - En esta clase se manejan los métodos:
+  - GetData: Obtiene los datos de la tabla CorporateData.
+  - GetCuit: A través de un ID obtiene la sede y Cuit de la tabla CorporateData.
+  - GetSeqID: Obtiene e incrementa el ID de secuencia.
+  - ListCorporateData: A través de un ID, lista los elementos que coinciden con el respectivo ID.
+  - ListCorporateLog: A través del identificador único de CPU, lista todos los elementos que se encuentren con este identificador.
+
+- CorporateLog - Es una clase intermedia que se utiliza como puente para la clase log, Se manejan los métodos:
+  - Post: Se comunica con el post de la clase Log.
+  - List: Se comunica con el list de la clase Log.
+
+- Log - En esta clase se manejan los métodos:
+  - Post: Registra los datos del CPU, id de sección, método que utiliza, hora y fecha de la máquina.
+  - List: Lista a partir del identificador único de CPU los registros asentados en la tabla Corporate log.
+
+- Test_Corporate
+  1. Verifica que las instancias de CorporateData y CorporateLog implementen correctamente el patrón Singleton.
+  2. Prueba que getData devuelva la información esperada de la sede y contenga claves como sede y domicilio.
+  3. Prueba que getCUIT devuelva el CUIT y contenga las claves CUIT y sede.
+  4. Verifica que getSeqID retorne el ID de secuencia (idSeq).
+  5. Prueba que post de CorporateLog se ejecute sin errores al registrar una operación.
+  6. Prueba que list en CorporateLog devuelva una lista de registros, y que cada entrada de log contenga una clave method.
+  7. Prueba que listCorporateData retorne una lista con todos los registros de CorporateData.
+  8. Verifica que listCorporateLog en CorporateData retorne una lista.
+  9. Verifica que getData retorne un error para un ID inexistente.
+  10. Verifica que getCUIT retorne un error para un ID inexistente.
+  11. Verifica que getSeqID retorne un error para un ID inexistente.
+  12. Simula un error de conexión para verificar el manejo de errores.
+  13. Verifica que el post en CorporateLog registre una entrada con los datos correctos.
+  14. Prueba que getData maneje argumentos faltantes o vacíos.
 
 ### Ejecución de UADER_IS2_TPFI.py
 ![image](https://github.com/user-attachments/assets/0d73c7e5-00ee-4d5a-af30-b8e6b13f0b46)

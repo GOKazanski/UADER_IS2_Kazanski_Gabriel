@@ -59,18 +59,27 @@ def main():
     # Listar registros con CorporateData
     print("\nListando registros CorporateData:")
     log_entriesCorporateData = corporate_data.listCorporateData(site_id)
-    print("Entradas de log:", log_entriesCorporateData)
+    log_entriesCorporateData_json = json.dumps(log_entriesCorporateData, indent=2, default=corporate_data.decimal_default, ensure_ascii=False)
+    print("Entradas de log:", log_entriesCorporateData_json)
+
+    print("\nRegistrando operación en log:")
+    corporate_log.post(session_id, "listCorporateData")
 
 
     # Listar registros con CorporateLog
     print("\nListando registros CorporateLog:")
     log_entriesCorporateLog = corporate_data.listCorporateLog(uuid_cpu)
-    print("Entradas de log:", log_entriesCorporateLog)
+    log_entriesCorporateLog_json = json.dumps(log_entriesCorporateLog, indent=2, ensure_ascii=False, default=corporate_data.decimal_default)
+    print("Entradas de log:", log_entriesCorporateLog_json)
+
+    print("\nRegistrando operación en log:")
+    corporate_log.post(session_id, "listCorporateLog")
 
     # Consultar el log usando CorporateLog - método list
     print("\nConsultando registros en log:")
     log_entriesList = corporate_log.list(uuid_cpu, session_id)
-    print("Entradas de log:", log_entriesList)
+    log_entriesList_json = json.dumps(log_entriesList, indent=2, ensure_ascii=False, default=corporate_data.decimal_default)
+    print("Entradas de log:", log_entriesList_json)
 
 if __name__ == "__main__":
     os.system("cls" if os.name == 'nt' else "clear")  # Limpia la consola según el sistema operativo

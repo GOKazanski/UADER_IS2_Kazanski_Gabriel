@@ -6,12 +6,15 @@ import logging
 from decimal import Decimal
 from Components.CorporateLog import CorporateLog
 
-# Configuración del logger
+#Configuración del logger
 logger = logging.getLogger('CorporateDataLogger')
-logger.setLevel(logging.DEBUG)
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-logger.addHandler(console_handler)
+
+#Funcion para habilitar el logger
+def enable_logging():
+    logger.setLevel(logging.DEBUG)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    logger.addHandler(console_handler)
 
 class CorporateData:
     _instance = None
@@ -28,12 +31,19 @@ class CorporateData:
         logger.debug("Se inicializa la clase CorporateData")
 
     def getData(self, uuid, uuidCPU, id):
+        """Este es un método llamado getData que recupera un elemento de una tabla de DynamoDB.
+          Se necesitan tres parámetros: uuid, uuidCPU e id."""
         logger.debug("Se llama a getData, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+        print("Se llama a getData, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+
         try:
-            response = self.table.get_item(Key={'id': id})
+            response = self.table.get_item(
+                Key={'id': id}
+            )
             item = response.get('Item')
             if not item:
                 return json.dumps({"error": "Registro no encontrado"})
+
             return json.dumps({
                 "sede": item.get('sede'),
                 "domicilio": item.get('domicilio'),
@@ -45,12 +55,25 @@ class CorporateData:
             return json.dumps({"error": str(e)})
 
     def getCUIT(self, uuid, uuidCPU, id):
+        """Este es un método llamado getCUIT que recupera un elemento de una tabla de DynamoDB utilizando
+        la identificación como clave principal. Luego extrae los valores "sede" y "CUIT" del elemento y
+        los devuelve como un objeto JSON. Si no se encuentra el elemento o se produce un error,
+        devuelve un objeto JSON con un mensaje de error."""
         logger.debug("Se llama a getCUIT, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+        print("Se llama a getCUIT, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+
         try:
-            response = self.table.get_item(Key={'id': id})
+            response = self.table.get_item(
+                Key={
+                    'id': id
+                }
+            )
             item = response.get('Item')
             if item:
-                return json.dumps({"sede": item.get('sede'), "CUIT": item.get('CUIT')})
+                return json.dumps({
+                    "sede": item.get('sede'),
+                    "CUIT": item.get('CUIT')
+                })
             else:
                 logger.error("CUIT no encontrado")
                 return json.dumps({"error": "CUIT no encontrado"})
@@ -59,9 +82,17 @@ class CorporateData:
             return json.dumps({"error": str(e)})
 
     def getSeqID(self, uuid, uuidCPU, id):
+        """Este es un método llamado getSeqID que recupera e incrementa un ID de secuencia (idSeq)
+        de una tabla de DynamoDB. Se necesitan tres parámetros: uuid, uuidCPU e id."""
         logger.debug("Se llama a getSeqID, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+        print("Se llama a getSeqID, uuid: {uuid}, uuidCPU: {uuidCPU}, id: {id}".format(uuid=uuid, uuidCPU=uuidCPU, id=id))
+
         try:
-            response = self.table.get_item(Key={'id': id})
+            response = self.table.get_item(
+                Key={
+                    'id': id
+                }
+            )
             item = response.get('Item')
             if item and 'idSeq' in item:
                 new_idSeq = int(item['idSeq']) + 1
@@ -86,22 +117,30 @@ class CorporateData:
         raise TypeError
 
     def listCorporateData(self, id):
+        """Este método recupera todos los elementos de una tabla de DynamoDB y los devuelve como una lista.
+    #     Si se produce un error del cliente durante la operación, detecta la excepción y devuelve un objeto
+    #     JSON con un mensaje de error."""
         logger.debug("Se llama a listCorporateData, id: {id}".format(id=id))
         try:
             response = self.table.query(KeyConditionExpression=Key('id').eq(id))
             items = response.get('Items', [])
-            return items  # Devuelve siempre una lista
+            return items
         except botocore.exceptions.ClientError as e:
             logger.error(f'Error al obtener los datos: {str(e)}')
             return []
 
     def listCorporateLog(self, uuid_CPU):
+        """Este fragmento de código define un método llamado listCorporateLog que toma un parámetro uuid_CPU.
+    #     Dentro del método, intenta recuperar una tabla denominada 'CorporateLog' de un recurso de DynamoDB.
+    #     Luego, escanea la tabla y recupera todos los elementos.Si la operación tiene éxito, devuelve la
+    #     lista de elementos. Si hay un error, detecta la excepción ClientError y devuelve un objeto JSON
+    #     con el mensaje de error."""
         logger.debug("Se llama a listCorporateLog, uuid_CPU: {uuid_CPU}".format(uuid_CPU=uuid_CPU))
         try:
             self.table = self.dynamodb.Table('CorporateLog')
             response = self.table.scan(FilterExpression=Attr('CPUid').eq(uuid_CPU))
             items = response.get('Items', [])
-            return items  # Devuelve siempre una lista
+            return items
         except botocore.exceptions.ClientError as e:
             logger.error(f'Error al obtener los datos: {str(e)}')
             return []

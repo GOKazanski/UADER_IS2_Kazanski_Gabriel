@@ -13,6 +13,7 @@ def enable_logging():
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.DEBUG)
     logger.addHandler(console_handler)
+
 class UADER_IS2_listCorporateData:
     def __init__(self):
         self.dynamodb = boto3.resource('dynamodb')
@@ -22,6 +23,7 @@ class UADER_IS2_listCorporateData:
         if isinstance(obj, Decimal):
             return float(obj)
         raise TypeError
+
     def listCorporateData(self, id):
             """Este método recupera todos los elementos de una tabla de DynamoDB y los devuelve como una lista.
             Si se produce un error del cliente durante la operación, detecta la excepción y devuelve un objeto

@@ -17,6 +17,7 @@ def enable_logging():
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.DEBUG)
     logger.addHandler(console_handler)
+
 class UADER_IS2_listLog:
     def __init__(self):
             self.dynamodb = boto3.resource('dynamodb')
@@ -26,6 +27,7 @@ class UADER_IS2_listLog:
         if isinstance(obj, Decimal):
             return float(obj)
         raise TypeError
+
     def listCorporateLog(self):
             """Este fragmento de código define un método llamado listCorporateLog que toma un parámetro uuid_CPU.
             Dentro del método, intenta recuperar una tabla denominada 'CorporateLog' de un recurso de DynamoDB.

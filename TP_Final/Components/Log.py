@@ -17,6 +17,7 @@ def enable_logging():
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.DEBUG)
     logger.addHandler(console_handler)
+
 class Log:
     _instance = None
 
